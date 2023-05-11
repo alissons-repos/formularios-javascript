@@ -29,7 +29,7 @@ class Question {
 
 	isNumber = () => {
 		let res = Number.parseInt(prompt(this.question));
-		while (isNaN(res)) {
+		while (isNaN(res) && isFinite(res)) {
 			alert(`Please, use a valid number response!`);
 			res = Number.parseInt(prompt(this.question));
 		}
