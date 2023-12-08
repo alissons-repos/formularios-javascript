@@ -2,7 +2,7 @@ class Question {
 	constructor(type, question) {
 		this.type = type;
 		this.question = question;
-		this.answare = undefined;
+		this.answer = undefined;
 	}
 
 	yesOrNot = () => {
@@ -12,9 +12,9 @@ class Question {
 			res = String(prompt(this.question));
 		}
 		if (res.toLowerCase() === 'yes') {
-			return (this.answare = 'yes');
+			return (this.answer = 'yes');
 		} else {
-			return (this.answare = 'not');
+			return (this.answer = 'not');
 		}
 	};
 
@@ -24,7 +24,7 @@ class Question {
 			alert(`Please, use a valid text response!`);
 			res = String(prompt(this.question));
 		}
-		return (this.answare = res);
+		return (this.answer = res);
 	};
 
 	isNumber = () => {
@@ -33,10 +33,10 @@ class Question {
 			alert(`Please, use a valid number response!`);
 			res = Number.parseInt(prompt(this.question));
 		}
-		return (this.answare = res);
+		return (this.answer = res);
 	};
 
-	verifyAnsware = () => {
+	verifyAnswer = () => {
 		switch (this.type) {
 			case 1:
 				this.yesOrNot();
@@ -54,14 +54,14 @@ class Question {
 }
 
 function ask(quest) {
-	quest.verifyAnsware();
-	console.log(`Question: ${quest.question} \nAnsware: ${quest.answare}`);
+	quest.verifyAnswer();
+	console.log(`Question: ${quest.question} \nAnswer: ${quest.answer}`);
 }
 
-let question_001 = new Question(1, `Have you ever got stuck in the puzzle? `);
-let question_002 = new Question(2, `What is your name? `);
-let question_003 = new Question(3, `How many children do you have? `);
+let question_1 = new Question(1, `Have you ever got stuck in the puzzle? `);
+let question_2 = new Question(2, `What is your name? `);
+let question_3 = new Question(3, `How many children do you have? `);
 
-ask(question_001);
-ask(question_002);
-ask(question_003);
+ask(question_1);
+ask(question_2);
+ask(question_3);
